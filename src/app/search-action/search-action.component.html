@@ -1,0 +1,44 @@
+<div class="container-fluid Top">
+    <div *ngIf="searchDetailsLoad">
+        <div class="Loadalign" align="center">
+            <img class="GifAlign" src="../../assets/CBP-Portal.gif"/>
+        </div>
+    </div>
+    <div *ngIf="errSearchDetailsLoad">
+        <div class="font_color VerticalCenter" align="center">
+            <h3>Error occured while showing search details!</h3>
+            <h4>Please try again after some time</h4>
+        </div>
+    </div>
+    <div  *ngIf="!searchDetailsLoad && !errSearchDetailsLoad" class="Second_Container">
+        <div *ngIf="searchResult?.length > 0">
+            <h4 class="font_color HeadingAlign">Showing all results for : <i>{{userSearch}}</i></h4>
+        </div>
+        <div *ngIf="searchResult?.length > 0">
+            <div *ngFor="let data of searchResult;let i = index">
+                <div *ngIf="data.show.image" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 TextOnHover">
+                    <div  [routerLink]="['/ShowDetails',data.show.externals.thetvdb]">
+                        <img class="zoom" src="{{data.show.image.medium}}" />
+                        <div class="WrapperText">
+                            <div id="{{'Name'+i}}" class="Name">{{data.show.name}}</div>
+                            <div class="Genres">{{data.show.genres}}</div>
+                            <div class="Language">{{data.show.language}}<span *ngIf="data.show.network">,{{data.show.network.name}}</span></div>
+                            <div class="Language">Rating : <i class="glyphicon glyphicon-star"></i> {{data.show.rating.average}}
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="searchResult?.length == 0">
+            <div class="font_color VerticalCenter" align="center">
+                <h3>Nothing found!</h3>
+                <h4>Try searching for something else</h4>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

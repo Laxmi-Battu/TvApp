@@ -1,0 +1,86 @@
+
+<div class="container-fluid Top">
+   
+        <div class="Second_Container">
+            <div *ngIf="dashboardLoad">
+                <div class="Loadalign" align="center">
+                    <img class="GifAlign" src="../../assets/CBP-Portal.gif"/> 
+                </div>
+            </div>
+            <div *ngIf="errDashboardLoad">
+                <div class="font_color VerticalCenter" align="center">
+                    <h3>Sorry some error occured!</h3>
+                    <h4>Please try again after some time</h4>
+                </div>
+            </div>
+            <div class="row ContainerMargin">
+                <div *ngIf="allTVShows?.length == 0">
+                    <div class="font_color VerticalCenter" align="center">
+                        <h3>Nothing found!</h3>
+                        <h4>Try searching for something else</h4>
+                    </div>
+                </div>
+                <!-- <!-- <div class="cwhite">
+                {{groupbyjson|json}}
+                </div> 
+                <div class="cwhite">{{genresList|json}}</div> -->
+                <div *ngIf="allTVShows?.length > 0">
+                    <div class="row ContainerMargin">
+                        <div>
+                            <h4 class="font_color Heading">Popular shows</h4>
+                        </div>
+                        <!-- <carousel [cellsToShow]="6" [cellWidth]="'100%'" [objectFit]="'cover'"> -->
+                            <carousel>
+                            <div *ngFor="let data of topRatedShows" class="carousel-cell">
+
+                                <div class="TextOnHover">
+                                    <div [routerLink]="['/ShowDetails',data.externals.thetvdb]">
+                                        <img class="zoom" src="{{data.image?.medium}}" />
+                                        <div class="WrapperText">
+                                            <div class="Name">{{data.name}}</div>
+                                            <div class="Genres">{{data.genres}}</div>
+                                            <div class="Language">{{data.language}}<span *ngIf="data.network"> ,
+                                                    {{data.network.name}}</span></div>
+                                            <div class="Language">Rating : <i class="glyphicon glyphicon-star"></i>
+                                                {{data.rating.average}}</div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </carousel>
+                    </div>
+
+                    <!------Grpby-->
+                    <div class="row ContainerMargin">
+                        <div>
+                            <h4 class="font_color Heading">Genres Shows</h4>
+                        </div>
+                        <div >
+                        <carousel *ngFor="let item of groupbyjson | keyvalue">
+                           
+                            <div  *ngFor="let data of item.value;let i=index;" class="carousel-cell">
+                                <div class=" TextOnHover">
+                                    <div [routerLink]="['/ShowDetails',data.externals.thetvdb]">
+                                        <img class="zoom" src="{{data.image.medium}}" />
+                                        <div class="WrapperText">
+                                            <div class="Name">{{data.name}}</div>
+                                            <div class="Genres">{{data.genres}}</div>
+                                            <div class="Language">{{data.language}}<span *ngIf="data.network"> ,
+                                                    {{data.network.name}}</span></div>
+                                            <div class="Language">Rating : <i class="glyphicon glyphicon-star"></i>
+                                                {{data.rating.average}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </carousel>
+                    </div>
+                    </div>
+                    <!------------grpby-->             
+                                   </div>
+            </div>
+        </div>
+    </div>
+   

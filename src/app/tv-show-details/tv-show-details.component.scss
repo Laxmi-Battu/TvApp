@@ -1,0 +1,54 @@
+@import '../../styles.scss';
+.font-weight{
+    font-weight: bold;
+}
+.SummaryText{
+    padding-right: 10px ;
+    text-align: start;
+}
+.glyphicon-star{
+    color: gold;
+}
+.dullWhite{
+    color: $NavBackground;
+    font-weight:600;
+}
+.bg-color{
+    background: transparent;
+    border: solid 2px $NavBackground;
+}
+.mr-b{
+margin-bottom: 0px;
+}
+.bt-align{
+    margin-left:10px;
+}
+.mr-bt{
+    margin-bottom: 20px;
+}
+.infoBackgorund{
+    background: $pagebackground;
+    opacity: 0.6;
+    padding: 50px;
+    margin-top: 50px;
+    width: 50%;
+    border:1px solid $NavBackground;
+    border-radius: 25px;
+}
+h3{
+    margin-top: 0px;
+}
+
+.Image_align{
+    padding-left: 10px;
+}
+.PaddingTxt{
+    padding: 20px;
+}
+
+@media only screen and (max-width: 567px){
+    .infoBackgorund{
+        width: auto!important;
+        padding: 20px!important;
+    }
+}

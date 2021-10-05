@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+.header-logo{
+    width: 35%;
+    margin: 0 21px;
+    cursor: pointer;
+}
+
+.Menu-bar{
+    background: $NavBackground;
+    border-radius: 0;
+    border-color: $NavBackground;
+    height: 75px;
+    z-index: 99999;
+}
+.SearchRight{
+    text-align: right;
+    margin: 25px 30px;
+}
+.Inputfeild{
+    border-radius: 5px;
+}
+.Srch{
+    margin-left: -20px;
+    color:$NavBackground;
+}
+@media only screen and (min-width:769px){
+    .navbar-toggler{
+        display:none;
+        margin-top:18px;
+    }
+}
+@media only screen and (max-width:320px){
+    .navbar-collapse{
+        display:none;
+    }
+}
+@media only screen and (min-width: 480px){
+    .navbar-toggler{
+        margin-top: 18px!important;
+        float: right;
+        margin-right:40px;
+    }
+}
+// @media only screen and(min-width:320px) and (max-width:780px){
+//     button .navbar-toggler{
+//         margin-top: 18px!important;  
+//     }
+// }
