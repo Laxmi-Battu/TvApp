@@ -1,0 +1,96 @@
+<div class="container-fluid top">
+  <div class="second_Container">
+    <div *ngIf="showDetailsLoad">
+      <div class="loadAlign" align="center">
+        <img class="gifAlign" src="../../assets/CBP-Portal.gif" />
+      </div>
+    </div>
+    <div *ngIf="errShowDetailsLoad">
+      <div class="font_color verticalCenter" align="center">
+        <h3>Error occured while showing show details!</h3>
+        <h4>Please try again after some time</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="!showDetailsLoad && !errShowDetailsLoad">
+        <div *ngIf="showData" class="paddingTxt">
+          <div class="row mr-bt">
+            <div class="col-sm-2">
+              <div class="bg-color" (click)="back()"> <i class="glyphicon glyphicon-arrow-left srch"></i>Back </div>
+              <!-- <button type="button" class="btn btn-outline-dark btn-md btn-floating bg-color bt-align" [routerLink]="['/Dashboard']"> Home </button> -->
+            </div>
+          </div>
+          <img class="image_align col-md-4 sm-12 xs-12" src="{{ showData.image.medium }}" />
+          <div class="col-md-8 cwhite">
+            <h2>{{ showData.name }}</h2>
+            <div class="dullWhite">
+              <span *ngIf="showData?.rating?.average != null"
+                ><i class="glyphicon glyphicon-star"></i>
+                {{ showData.rating.average }}</span
+              >
+              <span *ngIf="showData?.rating?.average == null"
+                ><i class="glyphicon glyphicon-star"></i> Not Found</span
+              >
+              <p class="mr-b" *ngIf="showData?.runtime != null">
+                Duration:{{ showData.runtime }}min
+              </p>
+              <p class="mr-b" *ngIf="showData?.runtime == null">
+                Duration:0 min
+              </p>
+
+              <span> {{ showData.language }}</span>
+              <span> {{ showData.premiered.split("-")[0] }}</span>
+            </div>
+            <h5>
+              <div class="summaryText" innerHTML="{{ showData.summary }}"></div>
+            </h5>
+            <div class="infoBackgorund">
+              <h3 style="text-decoration: underline">Show Details</h3>
+              <div>
+                <span class="font-weight">Network : </span>
+                <span *ngIf="showData?.network?.country?.name != null"
+                  >{{ showData.network.country.name }}
+                  {{ showData.network.name }}</span
+                >
+                <span *ngIf="showData?.network?.country?.name == null"
+                  >Data Not found</span
+                >
+              </div>
+              <div>
+                <span class="font-weight">Schedule : </span>
+                <span *ngIf="showData?.schdule?.days != null"
+                  >{{ showData.schedule.days }} &nbsp;
+                  {{ showData.schedule.time }}</span
+                >
+                <span *ngIf="showData?.schdule?.days == null"
+                  >Data Not found</span
+                >
+              </div>
+              <div>
+                <span class="font-weight">Language : </span>
+                <span *ngIf="showData?.language != null">{{
+                  showData.language
+                }}</span>
+                <span *ngIf="showData?.language == null">Data Not found</span>
+              </div>
+              <div>
+                <span class="font-weight">Genres : </span>
+                <span *ngIf="showData?.genres != ''">{{
+                  showData.genres
+                }}</span>
+                <span *ngIf="showData.genres == ''">Data Not found</span>
+              </div>
+              <div>
+                <span class="font-weight">Status : </span>
+                <span *ngIf="showData?.status != null">{{
+                  showData.status
+                }}</span>
+                <span *ngIf="showData?.genres == null">Data Not found</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

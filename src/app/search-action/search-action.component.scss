@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+.zoom {
+    width: 100%;
+    transition: transform .2s; 
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1);
+    z-index: 99999;
+  }
+
+.headingAlign{
+    padding: 10px;
+  }
+
+
+@media only screen and (max-width: 567px){
+    .zoom{
+        padding: 50px!important;
+        padding-top: 20px!important;
+        padding-bottom: 20px!important;
+    }
+    .wrapperText{
+      padding: 10px 55px;
+  }
+}
+
+
+
+
+
+

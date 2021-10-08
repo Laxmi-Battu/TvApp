@@ -1,0 +1,46 @@
+<div class="container-fluid top">
+    <div *ngIf="searchDetailsLoad">
+        <div class="Loadalign" align="center">
+            <img class="gifAlign" src="../../assets/CBP-Portal.gif"/>
+        </div>
+    </div>
+    <div *ngIf="errSearchDetailsLoad">
+        <div class="font_color VerticalCenter" align="center">
+            <h3>Error occured while showing search details!</h3>
+            <h4>Please try again after some time</h4>
+        </div>
+    </div>
+    <div  *ngIf="!searchDetailsLoad && !errSearchDetailsLoad" class="second_Container">
+        <div *ngIf="searchResult?.length > 0">
+            <h4 class="font_color headingAlign">Showing all results for : <i>{{userSearch}}</i></h4>
+        </div>
+        <div *ngIf="searchResult?.length > 0">
+            <div *ngFor="let data of searchResult;let i = index">
+                <div *ngIf="data.show.image" class="col-lg-2 col-md-4 col-sm-6 col-xs-12 textOnHover">
+                    <div  [routerLink]="['/ShowDetails',data.show.externals.thetvdb]">
+                        <img class="zoom" src="{{data.show.image.medium}}"  alt="Show Image" />
+                    
+                        <div class="wrapperText"> 
+                            <div id="{{'Name'+i}}" class="name">{{data.show.name}}</div>
+                            <div class="genres">{{data.show.genres}}</div>
+                            <div class="language">{{data.show.language}}<span *ngIf="data.show.network">,{{data.show.network.name}}</span></div>
+                            <div class="language">Rating : <i class="glyphicon glyphicon-star"></i> {{data.show.rating.average}}
+                            </div> 
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="searchResult?.length == 0">
+            <div class="font_color VerticalCenter" align="center">
+                <a [routerLink]="['/dashboard']">Home </a> 
+                <h3>Nothing found!</h3>
+                <h4>Try searching for something else</h4>
+            </div>
+        </div>
+        
+    </div>
+</div>
+

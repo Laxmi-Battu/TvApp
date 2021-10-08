@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+$NavBackground: #000;
+$fontcolor: #fff;
+$pagebackground : #71c5bd;
+$logoColor : #71c5bd;
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+.second_Container{
+    margin-top: 100px;
+}
+
+.top{
+  background: $pagebackground;
+  padding-bottom: 30px;
+}
+.wrapperText{
+  margin-top:-137px;
+  background: $pagebackground;
+  color: $NavBackground;
+  position: absolute;
+  padding: 10px 15px;
+  width: 100%;
+  opacity: 0.95;
+  height: auto;
+  left:-1px;
+  visibility: hidden;
+  cursor: pointer;
+  z-index: 99999
+
+}
+.textOnHover:hover .wrapperText{
+  visibility: visible;
+  height: 106px;
+  
+}
+.textOnHover{
+  padding: 0px;
+}
+.name{
+  font-size: 14px;
+}
+.genres{
+  font-size: 12px;
+}
+.language{
+  font-size: 12px;
+}
+.font_color{
+  color: $NavBackground;
+}
+.gifAlign{
+  width: 5%;
+}
+.loadalign{
+  margin-top: 340px;
+  margin-bottom: 340px;
+}
+.verticalCenter{
+  margin-top: 340px;
+  margin-bottom: 340px;
+}
+
+@media only screen and (max-width: 567px){
+  .gifAlign{
+      width: 20%;
+  }
+  .topConatiner{
+    height: auto;
+  }
+}
+

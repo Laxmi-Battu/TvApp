@@ -1,0 +1,80 @@
+
+<div class="container-fluid top">
+           <div class="container second_Container">
+            <div *ngIf="dashboardLoad">
+                <div class="loadalign" align="center">
+                    <img class="gifAlign" src="../../assets/CBP-Portal.gif"/> 
+                </div>
+            </div>
+            <div *ngIf="errDashboardLoad">
+                <div class="font_color verticalCenter" align="center">
+                    <h3>Sorry some error occured!</h3>
+                    <h4>Please try again after some time</h4>
+                </div>
+            </div>
+            <div class="row containerMargin">
+                <div *ngIf="allTVShows?.length == 0">
+                    <div class="font_color verticalCenter" align="center">
+                        <h3>Nothing found!</h3>
+                        <h4>Try searching for something else</h4>
+                    </div>
+                </div>
+                <div *ngIf="allTVShows?.length > 0">
+                    <!-- <div class="row containerMargin">
+                        <div>
+                            <h4 class="font_color Heading">Popular shows</h4>
+                        </div>
+                        <!-- <carousel [cellsToShow]="6" [cellWidth]="'100%'" [objectFit]="'cover'"> --
+                            <carousel>
+                            <div *ngFor="let data of topRatedShows" class="carousel-cell">
+
+                                <div class="textOnHover">
+                                    <div [routerLink]="['/ShowDetails',data.externals.thetvdb]">
+                                        <img class="zoom" src="{{data.image?.medium}}" alt="Show Image" />
+                                        <div class="wrapperText">
+                                            <div class="name">{{data.name}}</div>
+                                            <div class="genres">{{data.genres}}</div>
+                                            <div class="language">{{data.language}}<span *ngIf="data.network"> ,
+                                                    {{data.network.name}}</span></div>
+                                            <div class="language">Rating : <i class="glyphicon glyphicon-star"></i>
+                                                {{data.rating.average}}</div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </carousel>
+                    </div> -->
+
+                    <!------Grpby-->
+                    <div class="row containerMargin">
+                        <carousel *ngFor="let show of groupbyjson">
+                            <!-- <h4 class="font_color Heading">{{groupbyjson.genres.split[0]}}</h4> -->
+                            <h4 class="font_color heading mr-t">{{show.showName}}</h4>
+                             <div  *ngFor="let showListItem of show.showList;let i=index;" class="carousel-cell">
+                                <!-- <h4 class="font_color Heading">{{show.genres}}</h4> 
+                                <h4 class="font_color Heading">{{data.genres}} Shows</h4> -->
+                                 <div class=" textOnHover">
+                                     <div [routerLink]="['/ShowDetails',showListItem.externals.thetvdb]">
+                                        <img class="zoom" src="{{showListItem.image.medium}}" alt="Show Image"/>
+                                        <div class="wrapperText">
+                                            <div class="name">{{showListItem.name}}</div>
+                                            <div class="genres">{{showListItem.genres}}</div>
+                                            <div class="language">{{showListItem.language}}<span *ngIf="showListItem.network"> 
+                                                    {{showListItem.network.name}}</span></div>
+                                            <div class="language">Rating : <i class="glyphicon glyphicon-star"></i>
+                                                {{showListItem.rating.average}}</div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        
+                        </carousel>
+                    
+                    </div>
+                    </div>
+                    <!------------grpby-->             
+            </div>
+        </div>
+    </div>
+   

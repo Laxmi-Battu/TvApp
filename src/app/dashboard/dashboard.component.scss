@@ -1,0 +1,35 @@
+@import '../../styles.scss';
+.zoom {
+    width: 100%;
+    transition: transform .5s; 
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .heading{
+    padding: 10px;
+    font-size:1.5em;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1);
+    z-index: 99999;
+  }
+
+
+.carousel{
+    height: 300px!important;
+    z-index: 9999;
+}
+.carousel-cell{
+  margin-left: -15em;
+}
+
+
+
+
+

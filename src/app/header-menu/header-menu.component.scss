@@ -1,0 +1,82 @@
+@import '../../styles.scss';
+.header-logo{
+    width: 25%;
+    margin: 0 21px;
+    cursor: pointer;
+}
+
+.menu-bar{
+    background: $NavBackground;
+    border-radius: 0;
+    border-color: $NavBackground;
+    height: 75px;
+    z-index: 99999;
+}
+.searchRight{
+    text-align: right;
+    margin: 25px 0px;
+}
+input[type='text']::placeholder
+    {   
+    padding-left: 20px;  
+    color: #fff;   
+    }
+.srch{
+    margin-left: -20px;
+    color:$fontcolor;
+    cursor: pointer;
+}
+.inputfeild{
+    background:transparent;
+    border :1px solid #fff;
+    height: 30px;
+    color:#fff;
+    }
+@media only screen and (min-width:769px){
+    .navbar-toggler{
+        display:none;
+        margin-top:18px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width:767px){
+    .header-logo{
+        width: 75%;
+        margin: 5px 0px;
+        cursor: pointer;
+    }
+    .searchRight{
+        text-align: right;
+        margin: 20px -7px
+    }
+    .inputfeild{
+        width: 144px;
+        margin-right: 10px;
+    }
+    .srch{
+        margin-left: -28px;
+        padding-right: 14px;
+    }
+    
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) { 
+    .header-logo {
+      width: 36% !important;
+      margin: 4px 21px;
+      cursor: pointer;
+   }
+   .searchRight{
+    text-align: right;
+    margin: 25px 0px;
+}
+}
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+  .header-logo {
+    width: 36% !important;
+    margin: 4px 21px;
+    cursor: pointer;
+ }
+ .searchRight {
+    text-align: right;
+    margin: 25px 0px;
+}
+}

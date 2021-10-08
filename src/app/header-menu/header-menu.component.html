@@ -1,0 +1,36 @@
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark Menu-bar navbar-fixed-top row">
+        <div class="navbar-brand col-sm-4">
+            <img class="header-logo" [routerLink]="['/Dashboard']" src="../../assets/tvm-header-logo.png"/>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Mynavbar" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+          <span class="glyphicon glyphicon-menu-hamburger "></span>
+        </button>
+      <div class="col-sm-4"></div>
+        <div class="collapse navbar-collapse" id="MyNavbar" [ngbCollapse]="isCollapsed">
+       <div class="col-sm-4">
+            <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+                <div class="searchRight ">
+                    <input [(ngModel)]="searchTxt" name="searchTxt" autocomplete="off"  type="text" class="Inputfeild" placeholder="Search">
+                    <i class="Srch glyphicon glyphicon-search"></i>
+                </div>
+            </form>
+        </div>
+    </div>
+      </nav> -->
+
+      
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark menu-bar navbar-fixed-top row">
+            <div class="container-fluid">
+                <div class="navbar-brand col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <img class="header-logo" [routerLink]="['/Dashboard']" src="../../assets/tvm-header-logo.png"/>
+                </div>
+                <form #formData="ngForm" (ngSubmit)="onSubmit(formData)" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="searchRight">
+                        <input [(ngModel)]="searchTxt" name="searchTxt" autocomplete="off"  type="text" class="inputfeild" placeholder="Search">
+                        <i class="srch glyphicon glyphicon-search"></i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    
+    
